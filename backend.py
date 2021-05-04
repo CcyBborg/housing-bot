@@ -1,3 +1,44 @@
+from peewee import *
+
+db = SqliteDatabase('./CAMPUS.db', pragmas={
+    'journal_mode': 'wal',
+    'cache_size': -1024 * 64})
+
+
+class Enrolled(Model):
+    id = PrimaryKeyField(unique=True, null=False)
+    name = CharField()
+    surname = CharField()
+    patronymic = CharField()
+    student_card = CharField()
+
+    class Meta:
+        db_table = 'enrolled_stats'
+        database = db
+
+
+class Pass(Model):
+    id = PrimaryKeyField(unique=True, null=False)
+    series = CharField()
+    number = CharField()
+    date_of_issue = CharField()
+    issued_by = CharField()
+    place_of_registration = CharField()
+
+    class Meta:
+        db_table = 'pass_data'
+        database = db
+
+
+class Registered(Model):
+    tg_id = PrimaryKeyField(null=False)
+    enrolled_id = IntegerField()
+    data_id = IntegerField()
+    status = CharField()
+
+    class Meta:
+        db_table = 'registered'
+        database = db
 
 
 def add_number(message):
