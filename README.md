@@ -37,4 +37,4 @@
 * Данил Яроцкий ИУ7-81Б - BackEnd Developer, Tester
 * Павел Минеев ИУ7-84 - BackEnd Developer
 * Алексей Берёзкин ИУ7-81Б - FrontEnd Developer
-* Яна Маковская ИУ7-84Б - BackEnd Developer
+* Яна Маковская ИУ7-84Б - BackEnd Developer, Project Manager
